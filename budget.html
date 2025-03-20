@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Personal Budget Tracker</h1>
+<a href="#">Add Income Expense</a>
+<br>
+<a href="#">view Budget Summary</a>
+<h2>Welcome to the Personal Budget tracker</h2>
+<p>This Tracker helps you monthly income and expenses.You can add new entries and view a detailed summary of budget</p>
+<h3>Add New Income or Expense</h3>
+<form>
+<label for="amt">Amount:</label>
+<input type="number" id="amt" name="amount" placeholder="Enter amount">
+<br>
+<br>
+<label for="category">Category</label>
+<select id="category" name="category" >
+    <option value="">select the category</option>
+    <option value="one">one</option>
+    <option value="Two">Two</option>
+    <option value="Three">Three</option>
+</select>
+<br>
+<br>
+<label for="date">Date:</label>
+<input type="date" id="date" name="Date" placeholder="Date">
+<br>
+<br>
+
+<label>Type:</label>
+
+<input type="radio" id="Income" name="Type" value="Income">
+<label for="Income">Income</label>
+
+<input type="radio" id="Expenses" name="Type" value="Expenses">
+<label for="Expenses">Expenses</label>
+<br>
+<br>
+<button type="submit">Add Entry</button>
+<br>
+</form>
+<h3>Budget summary</h3>
+<table border="1">
+    <tr>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Transaction details</th>
+        <th>status</th>
+        <th>Actions</th>  <!-- Last column for buttons -->
+    </tr>
+    <tr>
+        <td>Food</td>
+        <td>$200</td>
+        <td>groceries for this week</td>
+        <td>Completed</td>
+        <td>
+            <button onclick="editRow(2)">Edit</button>
+            <button onclick="deleteRow(2)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Transportation</td>
+        <td>$100</td>
+        <td>Monthly Bus pass</td>
+        <td>Completed</td>
+        <td>
+            <button onclick="editRow(2)">Edit</button>
+            <button onclick="deleteRow(2)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Entertainment</td>
+        <td>$50</td>
+        <td>cinema Tickets</td>
+        <td>Completed</td>
+        <td>
+            <button onclick="editRow(2)">Edit</button>
+            <button onclick="deleteRow(2)">Delete</button>
+        </td>
+    </tr>
+</tr>
+<tr>
+    <td>Salary</td>
+    <td>$3000</td>
+    <td>Monthly salary Payment</td>
+    <td>Completed</td>
+    <td>
+        <button onclick="editRow(2)">Edit</button>
+        <button onclick="deleteRow(2)">Delete</button>
+    </td>
+</tr>
+</tr>
+<tr>
+    <td>Savings</td>
+    <td>$500</td>
+    <td>emergency fund deposite</td>
+    <td>Completed</td>
+    <td>
+        <button onclick="editRow(2)">Edit</button>
+        <button onclick="deleteRow(2)">Delete</button>
+    </td>
+</tr>
+</tr>
+<tr>
+    <td>Utilities</td>
+    <td>$100</td>
+    <td>electricity Bill</td>
+    <td>Completed</td>
+    <td>
+        <button onclick="editRow(2)">Edit</button>
+        <button onclick="deleteRow(2)">Delete</button>
+    </td>
+</tr>
+</tr>
+<tr>
+    <td>Utilities</td>
+    <td>$50</td>
+    <td>water Bill</td>
+    <td>Completed</td>
+    <td>
+        <button onclick="editRow(2)">Edit</button>
+        <button onclick="deleteRow(2)">Delete</button>
+    </td>
+</tr>
+<tr>
+    <td>Housing</td>
+    <td>$1200</td>
+    <td>Monthly Rent</td>
+    <td>Completed</td>
+    <td>
+        <button onclick="editRow(2)">Edit</button>
+        <button onclick="deleteRow(2)">Delete</button>
+    </td>
+</tr>
+<tr>
+    <td>Housing</td>
+    <td>$300</td>
+    <td>Maintenance fee</td>
+    <td>Completed</td>
+    <td>
+        <button onclick="editRow(2)">Edit</button>
+        <button onclick="deleteRow(2)">Delete</button>
+    </td>
+</tr>
+</table>
+<p>Personal budget Tracker version 1.0</p>
+<hr>
+<p>&copy; Personal budget tracker Designed by your name All rights reserved</p>
+<p>Contact: support@budgettracker.com</p>
+
+</body>
+</html
