@@ -1,0 +1,43 @@
+--translate
+select translate('Deepthi','e','w') from dual;
+select translate('Deepthi','ee','ww') from dual;
+--drawback:entire string not possible
+select translate('Deepthi','deepthi','abcdefg') from dual;
+--Replace
+select replace('oracle ebusiness suite','ebusiness','ebs')from dual;
+--entire string possible
+select replace('oracle ebusiness suite','oracle ebusiness suite','orcl ebs ste')from dual;
+--drawback: more than 1 string not possible
+-decode
+select * from hr.employees;
+select first_name,salary,job_id,decode(job_id,'AD_PRES','PRESIDENT',
+                                              'IT_PROG','IT_PROGRAMMER',
+                                              'ST_CLERK','SR_CLERK',
+                                             job_id)as decoded_jobid from hr.employees;
+select first_name,salary,job_id,decode(job_id,'AD_PRES','PRESIDENT',
+                                              'IT_','IT_PROGRAMMER',
+                                              'ST_CLERK','SR_CLERK',
+                                      'No job_id')as decoded_jobid 
+                                        from hr.employees;
+  select first_name,salary,job_id,decode(job_id,'AD_PRES','PRESIDENT',
+                                              'IT_PROG','IT_PROGRAMMER',
+                                              'ST_CLERK','SR_CLERK',
+                                             job_id)as decoded_jobid,decode(salary>20000,'high pay',
+                                                                            salary between 10000 and 20000,'Medium pay',
+                                                                            salary<10000,'low pay')as sal_status from hr.employees;                                                                                  
+SELECT first_name,
+       salary,
+       job_id,
+       DECODE(job_id, 'AD_PRES', 'PRESIDENT',
+                      'IT_PROG', 'IT_PROGRAMMER',
+                      'ST_CLERK', 'SR_CLERK',
+                      job_id) AS decoded_jobid,
+       DECODE(salary > 20000, 'high pay',
+              salary BETWEEN 10000 AND 20000, 'Medium pay',
+              salary < 10000, 'low pay') AS sal_status
+FROM hr.employees;
+SELECT e.*,
+       DECODE(e.job_id, 'AD_PRES', 'PRESIDENT',
+                      'IT_PROG', 'IT_PROGRAMMER',
+                      'ST_CLERK', 'SR_CLERK',
+                      e.job_id) AS decoded_jobid FROM hr.employees e;
