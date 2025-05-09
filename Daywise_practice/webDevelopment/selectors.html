@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="main title">hello</h1> 
+
+   <div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">box a</div>
+<div class="box">box b</div>
+<p>paragraph 1</p>
+<p>paragraph 2</p>
+<ul>
+    <li class="item">one</li>
+    <li class="item">two</li>
+</ul>
+
+<script>
+    let a=document.getElementById("main title");
+    console.log(a.textContent);
+    console.log(a.style.backgroundColor="red");
+    console.log(a.style.color="yellow")
+    console.log(a.innerText="Good Morning");
+  let boxes = document.getElementsByClassName("box");
+  console.log(boxes[0].textContent); 
+
+  let paragraphs=document.getElementsByTagName("p");
+  console.dir(paragraphs.length);
+  
+  let firstbox=document.querySelector('.box');
+  //console.dir(firstbox);
+   console.log(firstbox.textContent);
+   console.log(this);
+   console.dir(this);
+   let items=document.querySelectorAll(".item");
+   items.forEach(item=>console.log(item.textContent));
+
+</script>
+</body>
+</html>
