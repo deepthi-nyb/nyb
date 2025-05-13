@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom Traversing</h1>
+    <script  src="./domTraversing.js"></script>
+    <p>This is about Dom manipulation</p>
+     <div id="container">
+        <div id="childdiv">hello</div>
+      <h1>this is first child</h1>
+      <h2 id="second child">this is second child</h2>
+      <h3>this is third child</h3>
+      <h4>this is fourth child</h4>
+     </div>
+    <ul id="fruits" type="disc">
+     <li>Apple</li>
+     <li>Banana</li>
+     <li>Mango</li>
+     <li>Orange</li>
+    </ul>
+    <script>
+        var element=document.getElementById("container");
+     var parent=element.parentElement;
+     console.log(parent);
+     var children=element.children;
+     console.log(children);
+     Array.from(children).forEach(child=>console.log(child.textContent));
+     var child=document.getElementById("second child");
+     console.log(child.textContent);
+     //previous element sibling
+     var presib=child.previousElementSibling;
+     console.log(presib.textContent);
+     //next element sibling
+     var nextsib=child.nextElementSibling;
+     console.log(nextsib.textContent);
+        let list=document.getElementById("fruits");
+        console.log(list);
+        //creating new element
+        var newelement=document.createElement('h5');
+        //adding text
+        newelement.textContent="this is new element";
+        //appending new element
+         element.appendChild(newelement);
+         newelement.setAttribute('id','newele');
+        newelement.setAttribute('class','newele');
+        //accessing children
+        console.log(list.children);
+        console.log(list.parentElement);
+        //accsessing first and last child
+        console.log(list.firstElementChild);
+        console.log(list.firstElementChild.textContent);
+        console.log(list.lastElementChild.textContent);
+        //accessing parent
+        var item=document.querySelector("li");
+        console.log(item);
+        console.log(item.parentElement);
+        //using query selector and query selector all
+        var single=document.querySelector("ul li");
+        console.log(single.textContent);
+        var allitems=document.querySelectorAll("ul li");
+        //console.log(allitems.textContent); dont get why because allitems is a node list
+        allitems.forEach(item=>console.log(item.textContent))
+
+         for(i=0;i<allitems.length;i++){
+        console.log(allitems[i].textContent)}
+        //accessing siblings
+          var firstitem=document.querySelector("li");
+        console.log(firstitem.textContent);
+        var seconditem=firstitem.nextElementSibling;
+        console.log(seconditem.textContent);
+        console.log(seconditem.previousElementSibling.textContent);
+    </script>
+    <ul id="animals">
+        <li>Dog</li>
+        <li>Cat</li>
+        <li>Elephant</li>
+    </ul>
+    <script>
+        let animal=document.getElementById("animals");
+        var items=animal.children;
+        console.log(items);
+        //items.forEach(item=>console.log(item.textContent))----getElemntById not support for each
+        //items is html collection and foreach doesnt work directly on html collection need to convert into array or 
+        //clssic for loop or for of loop works
+        //forEach
+        Array.from(items).forEach(item=>console.log(item.textContent));
+        //for loop
+        for (i=0;i<items.length;i++){
+            console.log(items[i].textContent);
+        }
+        //for..of
+        for(let item of items){
+            console.log(item.textContent);
+        }
+        for(let item of items){
+            item.style.color="Blue";
+        }
+    </script>
+</body>
+</html>
