@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> domTraversing</title>
+</head>
+<body>
+    <h1>Dom traversing</h1>
+    <div id="container">
+    <h1 id="heading">this is old heading</h1>
+    <ul id="fruits">
+        <li class="fruit">Apple</li>
+        <li class="fruit">Banana</li>
+        <li class="fruit">Mango</li>
+        </ul>
+</div>
+<script>
+    //appending child
+    //A. appendChild()
+//Appends a node as the last child of a parent.
+  var li=document.createElement('li');
+  li.textContent="Orange";
+  var li1=document.createElement('li');
+  li1.textContent="papaya";
+  li.setAttribute('class','fruit');
+  var fruit=document.getElementById("fruits");
+  fruit.appendChild(li);
+  
+  fruit.appendChild(li1);
+  console.log(fruit.textContent);
+//. append()
+//Appends elements or text as the last child (can add multiple items).
+var p=document.createElement('p');
+p.textContent="new paragraph";
+var p1=document.createElement('p');
+p1.textContent="new p1 paragraph";
+document.body.append(p,p1,"extra extra","we can add exttra text also");
+//
+var li2=document.createElement('li');
+var br=document.createElement('br');
+var li3=document.createElement('li');
+li2.textContent="pineapple";
+li3.textContent="strawberry";
+fruit.append(li2,li3,br,'THESE ARE ALL FRUITS');
+
+console.log(fruit.textContent);
+//prepend
+var li4=document.createElement('li');
+li4.textContent="Blueberry";
+var li5=document.createElement('li');
+li5.textContent="kiwi";
+fruit.prepend(li4,li5);
+console.log(fruit.textContent);
+//insert before(newnode,refnode);
+var new1=document.createElement('li');
+new1.textContent="custard apple";
+
+var list=document.getElementById('fruits');
+console.log(list.textContent);
+var mango=fruits.children[4];
+ console.log(mango.textContent);
+list.insertBefore(new1,mango);
+//removeChild()
+var items=document.getElementById('fruits');
+var item=items.children[0];
+var item1=items.children[1]
+//items.removeChild(item);
+items.removeChild(item1);
+//remove()
+//document.getElementById('fruits').remove();
+//replacChild(new,old)
+var container=document.getElementById('container');
+var oldHeading=document.getElementById('heading');
+
+var newHeading=document.createElement('h1');
+newHeading.textContent='this is new heading';
+container.replaceChild(newHeading,oldHeading);
+container.addEventListener('click',function(){
+    alert("this is alert message");
+});
+
+
+
+</script>
+    
+</body>
+</html>
