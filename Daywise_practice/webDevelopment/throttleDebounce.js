@@ -1,0 +1,14 @@
+localStorage.setItem('name1','Sudha');
+localStorage.setItem('Company1','NYB');
+sessionStorage.setItem('name1','Rani');
+localStorage.setItem('name2','geeta');
+localStorage.setItem('Company2','NYB');
+sessionStorage.setItem('name2','Sita');
+console.log(localStorage.getItem('name1'));
+console.log(sessionStorage.getItem('name1'));
+console.log(localStorage.getItem('name2'));
+console.log(sessionStorage.getItem('name2'));
+localStorage.clearAll();
+sessionStorage.clearAll();
+localStorage.setItem('username','Deepthi');
+console.log(localStorage.getItem('username'));
