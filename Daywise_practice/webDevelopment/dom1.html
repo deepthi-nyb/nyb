@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Throttle Scroll Test</title>
+  <style>
+    body {
+      height: 3000px; /* makes the page scrollable */
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function throttle(fn, delay) {
+    let isThrottle = false;
+
+    return function (...args) {
+      if (!isThrottle) {
+        fn.apply(this, args);
+        isThrottle = true;
+
+        setTimeout(() => {
+          isThrottle = false;
+        }, delay);
+      }
+    };
+  }
+
+  function logScroll() {
+    console.log('User scrolled at', new Date().toLocaleTimeString());
+  }
+
+  const throttledScroll = throttle(logScroll, 1000);
+
+  window.addEventListener('scroll', throttledScroll);
+</script>
+<script src="./dom1.js"></script>
+</body>
+</html>
